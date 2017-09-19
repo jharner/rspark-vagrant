@@ -1,0 +1,11 @@
+rspark-data
+rspark-notes
+/ansible/ansyaccess.yml
+data
+*.nb.html
+*.html
+*.log
+.Rapp.history
+.DS_Store
+derby.log
+metastore_db
