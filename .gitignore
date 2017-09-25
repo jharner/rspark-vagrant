@@ -10,3 +10,4 @@ data
 derby.log
 metastore_db
 *rspark
+*.vagrant
