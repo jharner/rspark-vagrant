@@ -1,6 +1,6 @@
 # rspark-vagrant
 
-`rspark-vagrant` runs R, PostreSQL, Hadoop, Hive, and Spark in Docker containers within VirtualBox. Running the `start.sh` script below downloads images from Docker Hub the first time it is run and checks for updates thereafter.
+`rspark-vagrant` runs R, PostreSQL, Hadoop, Hive, and Spark in Docker containers within VirtualBox. Running the `start.sh` script below downloads images from Vagrant Hub the first time it is run and checks for updates thereafter.
 
 #### Install VirtualBox
 
@@ -49,7 +49,7 @@ You are now ready to start your session. Assuming you are in the parent director
 cd rspark-vagrant
 ./start.sh
 ```
-The last command runs the `start.sh` shell script, which launches vagrant and pulls the pre-built tagged images from Docker Hub (currently 0.9.2), and launches the containers. You must have execute privileges to run the shell script. If not, issue `chmod` from the command line, i.e., 
+The last command runs the `start.sh` shell script, which launches vagrant and pulls the pre-built tagged images from Vagrant Hub (currently 0.6.1), and launches the containers. You must have execute privileges to run the shell script. If not, issue `chmod` from the command line, i.e., 
 ```
 chmod 755 start.sh`
 ```
@@ -75,13 +75,13 @@ To start the containers again, assuming you are in the `rspark-vagrant` director
 ```
 Then login to RStudio as before.
 
-#### Updating your local `rspark-docker` repo.
+#### Updating your local `rspark-vagrant` repo.
 
-If `rspark-docker` gets updated, execute:
+If `rspark-vagrant` gets updated, execute:
 ```
 git pull origin master
 ```
-assuming you are in the `rspark-docker` directory.
+assuming you are in the `rspark-vagrant` directory.
 
 #### Installing the rspark-tutorial
 
