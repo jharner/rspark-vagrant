@@ -2,18 +2,14 @@ version: '3.5'
 services:
 
   postgres:
-    build: ./postgres
     restart: always
     image: rspark-postgres
     container_name: postgres
     hostname: postgres
     ports:
       - "5432:5432"     # Postgres
-    volumes:
-      - ./data/pgdata:/opt/pg-data
-
+      
   hadoop:
-    build: ./hadoop
     restart: always
     image: rspark-hadoop
     container_name: hadoop
@@ -21,27 +17,19 @@ services:
     ports:
       - "9000:9000"     # Hadoop
       - "50070:50070"   # Hadoop UI
-    volumes:
-      - ./data/hadoop:/opt/hadoop
-
+      
   hive:
-    build: ./hive
     restart: always
     image: rspark-hive
     container_name: hive
     hostname: hive
-    environment:
-      - PASSWORD=rstudiojh
     ports:
       - "10000:10000"
-      - "9999:9999"    # Hive UI
-      - "9083:9083"     # Hive Metastore
     depends_on:
       - hadoop
       - postgres
-
+      
   rstudio:
-    build: ./rstudio
     restart: always
     image: rspark-rstudio
     container_name: rstudio
@@ -50,11 +38,6 @@ services:
       - PASSWORD=rstudiojh
     ports:
       - "8787:8787"     # RStudio UI
-      - "4040:4040"     # Spark Web UI
-      - "4041:4041"
-    volumes:
-      - ./data/rstudio:/home/rstudio
     depends_on: 
       - hadoop
       - hive
-
